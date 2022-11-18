@@ -1,33 +1,59 @@
-//plus button handler
-const incrementItemBtn1 = document.getElementById("incrementItem1");
-incrementItemBtn1.addEventListener("click",function(){
-    const newQuantityNUmber = increment_decrement_handler(true);
-    increment_decrement_handler(newQuantityNUmber);
+function updatePhoneNumber (isIncrease){
+  const phoneNumberField = document.getElementById('phone-number-field');
+  const phoneNumberString = phoneNumberField.value;
+  const previousPhoneNumber = parseInt(phoneNumberString);
 
-});
-const decrementItemBtn1 = document.getElementById("decrementItem1");
-decrementItemBtn1.addEventListener("click",function(){
-    const newQuantityNUmber = increment_decrement_handler(false);
-    increment_decrement_handler(newQuantityNUmber)
-    
-});
+  let newPhoneNumber;
 
-
-function increment_decrement_handler(isIncrease){
-      const quantityOfItem = document.getElementById('quantityOfItem1');
-      const quantityNumberString = quantityOfItem.value;
-      const previousQuantityNumber = parseInt(quantityNumberString);
-
-      let newQuantityNUmber ;
-      if(isIncrease){
-        newQuantityNUmber = previousQuantityNumber + 1;
-      }
-      else {
-        newQuantityNUmber = previousQuantityNumber - 1;
-         
-      }
-      quantityOfItem1.value = newQuantityNUmber;
-      return newQuantityNUmber;
-    
-      
+  if(isIncrease){
+      newPhoneNumber = previousPhoneNumber + 1;
+  }
+  else{
+      newPhoneNumber = previousPhoneNumber - 1;
+  }
+  phoneNumberField.value = newPhoneNumber;
+  
+  return newPhoneNumber;
 }
+function update_CaseNumber (isIncrease){
+  const caseNumberField = document.getElementById('case-number-field');
+  const caseNumberString = caseNumberField.value;
+  const previousCaseNumber = parseInt(caseNumberString);
+
+  let new_CaseNumber;
+
+  if(isIncrease){
+    new_CaseNumber = previousCaseNumber + 1;
+  }
+  else{
+    new_CaseNumber = previousCaseNumber - 1;
+  }
+  caseNumberField.value = new_CaseNumber;
+  
+  return new_CaseNumber;
+}
+document.getElementById('btn-phone-plus').addEventListener('click', function(){
+  const newPhoneNumber = updatePhoneNumber(true);
+  
+
+
+
+});
+
+document.getElementById('btn-phone-minus').addEventListener('click', function(){
+  const newPhoneNumber = updatePhoneNumber(false);
+
+
+  
+})
+document.getElementById('btn-case-plus').addEventListener('click', function(){
+  const newcaseNumber = update_CaseNumber(true);
+
+  
+})
+document.getElementById('btn-case-minus').addEventListener('click', function(){
+  const newcaseNumber = update_CaseNumber(false);
+
+  
+  
+})
