@@ -53,6 +53,6 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
-#thanks{
-	display: block;
+.display{
+	display: none;
 }

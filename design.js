@@ -101,5 +101,5 @@ const loginBtn = document.getElementById("check-out-btn");
 loginBtn.addEventListener("click",function(){
 const log = document.getElementById("cart1"); 
 log.style.display= 'none';
-document.getElementById("1").style.display ="none";
+document.getElementById("1").style.display ="block";
 })
